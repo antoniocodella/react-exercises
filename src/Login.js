@@ -9,8 +9,7 @@ export class Login extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
-    console.log(this.state);
+    this.props.onLogin(this.state);
   };
 
   handleInputChange = (event) => {
@@ -48,7 +47,7 @@ export class Login extends React.Component {
           checked={this.state.remember}
           onChange={this.handleInputChange}
         />
-        {this.state.username === "" && this.state.password === "" ? (
+        {this.state.username === "" || this.state.password === "" ? (
           <button type="submit" disabled>
             Submit
           </button>
