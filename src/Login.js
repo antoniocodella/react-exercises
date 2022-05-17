@@ -10,8 +10,6 @@ export class Login extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onLogin(this.state);
-
-    // console.log(this.state);
   };
 
   handleInputChange = (event) => {
