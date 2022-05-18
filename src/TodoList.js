@@ -22,6 +22,7 @@ export class TodoList extends React.Component {
     this.setState(() => {
       return {
         items: [...this.state.items, newItem],
+        username: "",
       };
     });
   };
