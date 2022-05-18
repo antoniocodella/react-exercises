@@ -6,6 +6,7 @@ import { Counter } from "./Counter";
 import { Hello } from "./Hello";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
+import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 
@@ -33,9 +34,7 @@ export class App extends React.Component {
         <ClickCounter />
         <ClickTracker />
         <InteractiveWelcome />
-        <Login onLogin={this.onLogin} />
-        <UncontrolledLogin />
-        <Colors items={items} />
+        <TodoList />
       </div>
     );
   }
