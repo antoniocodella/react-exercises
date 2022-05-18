@@ -27,6 +27,12 @@ export class TodoList extends React.Component {
     });
   };
 
+  handleClearItems = () => {
+    this.setState(() => {
+      return { items: [] };
+    });
+  };
+
   render() {
     return (
       <div>
@@ -36,9 +42,10 @@ export class TodoList extends React.Component {
           onChange={this.handleInputChagne}
         ></input>
         <button onClick={this.handleAddItem}>Add Item</button>
+        <button onClick={this.handleClearItems}>Reset</button>
         <ul>
-          {this.state.items.map((item) => (
-            <li key={item}>{item}</li>
+          {this.state.items.map((item, index) => (
+            <li key={index}>{item}</li>
           ))}
         </ul>
       </div>
