@@ -23,6 +23,15 @@ export class Login extends React.Component {
     });
   };
 
+  handleResetInput = (e) => {
+    e.preventDefault();
+    this.setState({
+      username: "",
+      password: "",
+      remember: false,
+    });
+  };
+
   componentDidUpdate() {
     console.log(this.state);
   }
@@ -48,14 +57,11 @@ export class Login extends React.Component {
           onChange={this.handleInputChange}
         />
         {this.state.username === "" || this.state.password === "" ? (
-          <button type="submit" disabled>
-            Submit
-          </button>
+          <button disabled>Submit</button>
         ) : (
-          <button type="submit" onClick={this.handleSubmit}>
-            Submit
-          </button>
+          <button onClick={this.handleSubmit}>Submit</button>
         )}
+        <button onClick={this.handleResetInput}>Reset</button>
       </form>
     );
   }
