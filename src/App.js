@@ -15,6 +15,12 @@ export class App extends React.Component {
   };
 
   render() {
+    const items = [
+      { id: 1, name: "blue" },
+      { id: 2, name: "yellow" },
+      { id: 3, name: "green" },
+    ];
+
     return (
       <div>
         <Hello />
@@ -29,7 +35,7 @@ export class App extends React.Component {
         <InteractiveWelcome />
         <Login onLogin={this.onLogin} />
         <UncontrolledLogin />
-        <Colors items={["Blue", "Red", "Green"]} />
+        <Colors items={items} />
       </div>
     );
   }
