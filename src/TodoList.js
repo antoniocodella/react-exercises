@@ -2,19 +2,38 @@ import React from "react";
 
 export class TodoList extends React.Component {
   state = {
-    items: ["aaaaaa", "bbbbbbb", "cccccc", "dddddd"],
+    username: "",
+    items: [
+      "Learning Html",
+      "Learning Css",
+      "Learning JavaScript",
+      "Learning React",
+    ],
   };
 
-  handleAddItem = () => {
+  handleInputChagne = (e) => {
     this.setState(() => {
-      this.state.items.push("ciao");
+      return { username: e.target.value };
+    });
+  };
+
+  handleAddItem = (e) => {
+    const newItem = this.state.username;
+    this.setState(() => {
+      return {
+        items: [...this.state.items, newItem],
+      };
     });
   };
 
   render() {
     return (
       <div>
-        <input></input>
+        <input
+          type="text"
+          value={this.state.username}
+          onChange={this.handleInputChagne}
+        ></input>
         <button onClick={this.handleAddItem}>Add Item</button>
         <ul>
           {this.state.items.map((item) => (
