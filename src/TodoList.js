@@ -33,6 +33,26 @@ export class TodoList extends React.Component {
     });
   };
 
+  handleRemoveItem = (index) => {
+    const listItems = this.state.items;
+    listItems.splice(index, 1);
+    this.setState({
+      listItems,
+    });
+    console.log(this.state.items);
+  };
+
+  // handleRemoveItem = (e) => {
+  //   let x = e.target.getAttribute("id");
+  //   console.log(x);
+  //   console.log(this.state.items);
+  //   this.setState(() => {
+  //     return {
+  //       items: this.state.items.filter((item, index, array) => item !== x),
+  //     };
+  //   });
+  // };
+
   render() {
     return (
       <div>
@@ -45,7 +65,12 @@ export class TodoList extends React.Component {
         <button onClick={this.handleClearItems}>Reset</button>
         <ul>
           {this.state.items.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              {item}
+              <button onClick={() => this.handleRemoveItem(index)}>
+                Remove
+              </button>
+            </li>
           ))}
         </ul>
       </div>
