@@ -23,7 +23,7 @@ export class App extends React.Component {
     ];
 
     return (
-      <Container>
+      <Container title="React Exercises">
         <Hello />
         <Welcome name="John" age={15} />
         <Counter />
