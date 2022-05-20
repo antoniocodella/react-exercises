@@ -2,7 +2,6 @@ import React from "react";
 import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Colors } from "./Colors";
-import { Container } from "./Container";
 import { Counter } from "./Counter";
 import { Hello } from "./Hello";
 import { InteractiveWelcome } from "./InteractiveWelcome";
@@ -23,14 +22,14 @@ export class App extends React.Component {
     ];
 
     return (
-      <Container title="React Exercises">
+      <div>
         <Hello />
         <Welcome name="John" age={15} />
         <Counter />
         <ClickCounter />
         <ClickTracker />
         <UncontrolledLogin />
-      </Container>
+      </div>
     );
   }
 }
