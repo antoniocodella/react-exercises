@@ -37,6 +37,10 @@ export class Login extends React.Component {
   }
 
   render() {
+    const ButtonStyle = {
+      backgroundColor: this.state.password.length < 8 ? "red" : "green",
+    };
+
     return (
       <form>
         <input
@@ -59,7 +63,9 @@ export class Login extends React.Component {
         {this.state.username === "" || this.state.password === "" ? (
           <button disabled>Submit</button>
         ) : (
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button style={ButtonStyle} onClick={this.handleSubmit}>
+            Submit
+          </button>
         )}
         <button onClick={this.handleResetInput}>Reset</button>
       </form>

@@ -1,7 +1,20 @@
 import React, { createRef } from "react";
 
 export class UncontrolledLogin extends React.Component {
-  _inputRef = createRef();
+  _formRef = createRef();
+
+  state = {
+    enable: false,
+  };
+
+  enableButton = () => {
+    const username = this._formRef.current.elements.username.value;
+    const password = this._formRef.current.elements.password.value;
+
+    this.setState({
+      enable: !!username && !!password,
+    });
+  };
 
   handleSubmitForm = (event) => {
     event.preventDefault();
@@ -17,18 +30,14 @@ export class UncontrolledLogin extends React.Component {
     });
   };
 
-  componentDidMount() {
-    this._inputRef.current.focus();
-  }
-
   render() {
     return (
-      <form onSubmit={this.handleSubmitForm}>
+      <form ref={this._formRef} onSubmit={this.handleSubmitForm}>
         <h3>Uncontrolled Login</h3>
-        <input ref={this._inputRef} name="username" />
-        <input name="password" type="password" />
-        <input name="remember" type="checkbox" />
-        <button type="submit" onClick={this.handleResetInput}>
+        <input name="username" />
+        <input name="password" onChange={this.enableButton} type="password" />
+        <input name="remember" onChange={this.enableButton} type="checkbox" />
+        <button type="submit" disabled={!this.state.enable}>
           Submit
         </button>
         <button type="reset">Reset</button>
