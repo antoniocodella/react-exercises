@@ -4,46 +4,41 @@ import { ClickTracker } from "./ClickTracker";
 import { Colors } from "./Colors";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
+import { DisplayLanguage } from "./DisplayLanguage";
 import { Hello } from "./Hello";
 import { InteractiveWelcome } from "./InteractiveWelcome";
+import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
 import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
-  onLogin = (state) => {
-    console.log(state);
+  state = {
+    language: "en",
+  };
+
+  handleLanguageChange = (event) => {
+    this.setState({ language: event.target.value });
   };
 
   render() {
-    const items = [
-      { id: 1, name: "blue" },
-      { id: 2, name: "yellow" },
-      { id: 3, name: "green" },
-    ];
-
     return (
-      <Container title="React Exercises">
-        <Hello />
-
-        <TodoList
-          render={(items, removeItems) => {
-            return (
-              <ul>
-                {items.map((item, index) => (
-                  <li key={index}>
-                    {item}
-                    <button id={item} onClick={removeItems}>
-                      Remove
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            );
-          }}
-        ></TodoList>
-      </Container>
+      <div>
+        <select
+          value={this.state.language}
+          onChange={this.handleLanguageChange}
+        >
+          <option value="en">English</option>
+          <option value="it">Italiano</option>
+        </select>
+        <LanguageContext.Provider value={this.state.language}>
+          <Container title="React Exercises">
+            <DisplayLanguage />
+            <Hello />
+          </Container>
+        </LanguageContext.Provider>
+      </div>
     );
   }
 }
