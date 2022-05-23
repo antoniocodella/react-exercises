@@ -3,6 +3,7 @@ import React from "react";
 import { Container } from "./Container";
 
 import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 import { Hello } from "./Hello";
 import { Welcome } from "./Welcome";
 
@@ -23,7 +24,7 @@ export class App extends React.Component {
       <Container title="React Exercises">
         <Hello />
         <Welcome name="Mario" />
-        <GithubUser username="antoniocodella" />
+        <GithubUserList />
       </Container>
     );
   }
