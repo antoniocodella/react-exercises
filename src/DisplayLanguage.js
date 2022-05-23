@@ -1,7 +1,7 @@
 import React from "react";
 import { LanguageContext } from "./LanguageContext";
 
-const Strings = {
+const greeting = {
   en: { ciao: "Hello" },
   it: { ciao: "Ciao" },
 };
@@ -11,7 +11,7 @@ export class DisplayLanguage extends React.Component {
     return (
       <LanguageContext.Consumer>
         {(language) => {
-          return <div>{Strings[language].ciao}</div>;
+          return <div>{greeting[language].ciao}</div>;
         }}
       </LanguageContext.Consumer>
     );
