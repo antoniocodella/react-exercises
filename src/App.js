@@ -25,23 +25,12 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <select
-          value={this.state.language}
-          onChange={this.handleLanguageChange}
-        >
-          <option value="en">English</option>
-          <option value="it">Italiano</option>
-        </select>
-        <LanguageContext.Provider value={this.state.language}>
-          <Container title="React Exercises">
-            <DisplayLanguage language={this.state.language} />
-            <Hello />
-            <Welcome name="Mario" />
-            <Sum numbers={[1, 2, 3, 4, 5]} />
-          </Container>
-        </LanguageContext.Provider>
-      </div>
+      <Container title="React Exercises">
+        <Hello />
+        <Welcome name="Mario" />
+        <Sum numbers={[1, 2, 3, 4, 5]} />
+        <Counter initialValue={5} />
+      </Container>
     );
   }
 }
