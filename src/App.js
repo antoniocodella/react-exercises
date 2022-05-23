@@ -30,6 +30,7 @@ export class App extends React.Component {
         <Welcome name="Mario" />
         <Sum numbers={[1, 2, 3, 4, 5]} />
         <Counter initialValue={5} />
+        <Login />
       </Container>
     );
   }
