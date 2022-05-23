@@ -15,12 +15,8 @@ import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
-  state = {
-    language: "en",
-  };
-
-  handleLanguageChange = (event) => {
-    this.setState({ language: event.target.value });
+  onCounterChange = (value) => {
+    console.log(value);
   };
 
   render() {
@@ -28,9 +24,7 @@ export class App extends React.Component {
       <Container title="React Exercises">
         <Hello />
         <Welcome name="Mario" />
-        <Sum numbers={[1, 2, 3, 4, 5]} />
-        <Counter initialValue={5} />
-        <Login />
+        <Counter initialValue={5} onCounterChange={this.onCounterChange} />
       </Container>
     );
   }
