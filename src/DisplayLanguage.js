@@ -11,7 +11,12 @@ export class DisplayLanguage extends React.Component {
     return (
       <LanguageContext.Consumer>
         {(language) => {
-          return <div>{greeting[language].ciao}</div>;
+          return (
+            <div>
+              <h1>{language}</h1>
+              {greeting[language].ciao}
+            </div>
+          );
         }}
       </LanguageContext.Consumer>
     );

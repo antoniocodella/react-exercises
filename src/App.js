@@ -34,7 +34,7 @@ export class App extends React.Component {
         </select>
         <LanguageContext.Provider value={this.state.language}>
           <Container title="React Exercises">
-            <DisplayLanguage />
+            <DisplayLanguage language={this.state.language} />
             <Hello />
           </Container>
         </LanguageContext.Provider>
