@@ -4,6 +4,7 @@ import { ClickTracker } from "./ClickTracker";
 import { Colors } from "./Colors";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
+import { CounterUseEffect } from "./CounterUseEffect02";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Hello } from "./Hello";
 import { InteractiveWelcome } from "./InteractiveWelcome";
@@ -19,12 +20,20 @@ export class App extends React.Component {
     console.log(value);
   };
 
+  state = {
+    toggle: true,
+  };
+
+  handleToggle = () => {
+    this.setState({ toggle: !this.state.toggle });
+  };
   render() {
     return (
       <Container title="React Exercises">
         <Hello />
         <Welcome name="Mario" />
-        <Counter initialValue={5} onCounterChange={this.onCounterChange} />
+        <button onClick={this.handleToggle}>Toggle</button>
+        {this.state.toggle && <CounterUseEffect />}
       </Container>
     );
   }
