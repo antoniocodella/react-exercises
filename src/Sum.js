@@ -1,4 +1,4 @@
-export const Sum = ({ numbers }) => {
+export const Sum = ({ numbers = [1, 3, 5] }) => {
   return (
     <h1>
       {numbers.reduce((sum, current) => {
