@@ -5,7 +5,7 @@ export function useGiutubUser(username) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+  function fetchUser() {
     setLoading(true);
     fetch(`https://api.github.com/users/${username}`)
       .then((response) => {
@@ -21,7 +21,7 @@ export function useGiutubUser(username) {
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, [username]);
+  }
 
-  return { data, loading, error };
+  return { data, loading, error, onFetchGithubUser: fetchUser };
 }
