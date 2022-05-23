@@ -9,6 +9,7 @@ import { Hello } from "./Hello";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
+import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
@@ -37,6 +38,7 @@ export class App extends React.Component {
             <DisplayLanguage language={this.state.language} />
             <Hello />
             <Welcome name="Mario" />
+            <Sum numbers={[1, 2, 3, 4, 5]} />
           </Container>
         </LanguageContext.Provider>
       </div>
