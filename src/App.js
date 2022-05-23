@@ -36,6 +36,7 @@ export class App extends React.Component {
           <Container title="React Exercises">
             <DisplayLanguage language={this.state.language} />
             <Hello />
+            <Welcome name="Mario" />
           </Container>
         </LanguageContext.Provider>
       </div>
