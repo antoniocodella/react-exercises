@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
 
 const greeting = {
@@ -6,19 +6,13 @@ const greeting = {
   it: { ciao: "Ciao" },
 };
 
-export class DisplayLanguage extends React.Component {
-  render() {
-    return (
-      <LanguageContext.Consumer>
-        {(language) => {
-          return (
-            <div>
-              <h1>{language}</h1>
-              {greeting[language].ciao}
-            </div>
-          );
-        }}
-      </LanguageContext.Consumer>
-    );
-  }
+export function DisplayLanguage() {
+  const language = useContext(LanguageContext);
+
+  return (
+    <div>
+      <h1>{language}</h1>
+      {greeting[language].ciao}
+    </div>
+  );
 }
