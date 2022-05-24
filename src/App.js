@@ -5,6 +5,7 @@ import { Hello } from "./Hello";
 import { Counter } from "./Counter";
 import { FilteredList } from "./FilteredList";
 import { Login } from "./Login";
+import { CarDetail } from "./CarDetail";
 
 export class App extends React.Component {
   render() {
@@ -12,7 +13,9 @@ export class App extends React.Component {
       <Container title="React Exercises">
         <Hello />
         <GithubUser username="antoniocodella" />
-        <Login />
+        <CarDetail
+          initialData={{ model: "fiat", year: "1992", color: "red" }}
+        />
       </Container>
     );
   }
