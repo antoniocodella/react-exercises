@@ -15,8 +15,6 @@ export function GithubUser({ username }) {
         return response.json();
       })
       .then((json) => {
-        console.log(json);
-
         setData(json);
       })
       .catch((error) => setError(error))

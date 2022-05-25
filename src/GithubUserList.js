@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GithubUser } from "./GithubUser";
 
 export function GithubUserList() {
-  const [userList, setUserList] = useState(["antoniocodella", "gianmarcotoso"]);
+  const [userList, setUserList] = useState(["gianmarcotoso"]);
   const [user, setUser] = useState("");
 
   function handleInputUser(e) {
@@ -11,12 +11,9 @@ export function GithubUserList() {
   }
 
   function handleAddUser() {
-    setUserList(() => {
-      return {
-        userList: [...userList, user],
-      };
-    });
+    setUserList(() => [...userList, user]);
   }
+  console.log(userList);
 
   return (
     <div>
