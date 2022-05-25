@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container } from "./Container";
 import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 import { Hello } from "./Hello";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
@@ -14,14 +15,10 @@ export function App() {
 
   return (
     <div>
-      <select value={language} onChange={handleChangeLanguage}>
-        <option value="en">English</option>
-        <option value="it">Italiano</option>
-      </select>
       <LanguageContext.Provider value={language}>
         <Container title="React Exercises">
           <Hello />
-          <GithubUser username="antoniocodella" />
+          <GithubUserList />
           <DisplayLanguage />
         </Container>
       </LanguageContext.Provider>
