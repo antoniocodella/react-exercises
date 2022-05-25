@@ -5,6 +5,8 @@ import { Container } from "./Container";
 import { Counter } from "./Counter";
 import { NewGithubUser } from "./NewGithubUser";
 import { ShowGithubUser } from "./ShowGithubUser";
+import { NotFound } from "./NotFound";
+import { Links } from "./Links";
 
 export function App() {
   return (
@@ -13,10 +15,7 @@ export function App() {
         title={
           <div>
             <h1>React Exercises</h1>
-            <div>
-              <Link to="/">Home</Link>|<Link to="/counter">Counter</Link>|
-              <Link to="/users/:username">Github User</Link>
-            </div>
+            <Links />
           </div>
         }
       >
@@ -24,6 +23,7 @@ export function App() {
           <Route path="/" element={<Welcome name="Mario" />} />
           <Route path="/counter" element={<Counter />} />
           <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
     </BrowserRouter>
