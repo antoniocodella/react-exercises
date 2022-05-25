@@ -10,7 +10,6 @@ export function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome name="Mario" />} />
-          <Route path="/counter" element={<Counter />} />
         </Routes>
       </BrowserRouter>
     </Container>
