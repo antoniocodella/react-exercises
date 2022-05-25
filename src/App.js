@@ -24,21 +24,22 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <select
-          value={this.state.language}
-          onChange={this.handleLanguageChange}
-        >
-          <option value="en">English</option>
-          <option value="it">Italiano</option>
-        </select>
-        <LanguageContext.Provider value={this.state.language}>
-          <Container title="React Exercises">
-            <DisplayLanguage language={this.state.language} />
-            <Hello />
-          </Container>
-        </LanguageContext.Provider>
-      </div>
+      <Container title="React Exercises">
+        <TodoList
+          render={(items, removeItems) => {
+            return (
+              <ul>
+                {items.map((item, index) => (
+                  <li key={index}>
+                    {item}
+                    <button onClick={() => removeItems(index)}>Remove</button>
+                  </li>
+                ))}
+              </ul>
+            );
+          }}
+        />
+      </Container>
     );
   }
 }
