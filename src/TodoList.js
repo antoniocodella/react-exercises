@@ -33,15 +33,13 @@ export class TodoList extends React.Component {
     });
   };
 
-  handleRemoveItem = (e) => {
-    let x = e.target.getAttribute("id");
-    console.log(x);
-    console.log(this.state.items);
-    this.setState(() => {
-      return {
-        items: this.state.items.filter((item, index, array) => item !== x),
-      };
+  handleRemoveItem = (index) => {
+    const listItems = this.state.items;
+    listItems.splice(index, 1);
+    this.setState({
+      listItems,
     });
+    console.log(this.state.items);
   };
 
   render() {

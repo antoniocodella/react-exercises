@@ -1,19 +1,9 @@
 import React from "react";
-import { Age } from "./Age";
 
-export class Welcome extends React.Component {
-  render() {
-    return (
-      <div className="welcome">
-        <p>Welcome, {this.props.name}!</p>
-        {this.props.age > 10 &&
-          this.props.age < 65 &&
-          this.props.name === "John" && <Age age={this.props.age} />}
-      </div>
-    );
-  }
+export function Welcome({ name = "User" }) {
+  return (
+    <div>
+      <p>Welcome {name}!</p>
+    </div>
+  );
 }
-
-Welcome.defaultProps = {
-  name: "User",
-};
