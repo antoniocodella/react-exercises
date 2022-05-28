@@ -1,27 +1,12 @@
-import { useEffect, useState } from "react";
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export function useGiutubUser(username) {
-  const [data, setData] = useState();
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const { data, error } = useSWR(
+    `https://api.github.com/users/${username}`,
+    fetcher
+  );
 
-  function fetchUser() {
-    setLoading(true);
-    fetch(`https://api.github.com/users/${username}`)
-      .then((response) => {
-        if (response.status !== 200) {
-          setError(new Error("User not found"));
-        }
-        return response.json();
-      })
-      .then((json) => {
-        console.log(json);
-
-        setData(json);
-      })
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-  }
-
-  return { data, loading, error, onFetchGithubUser: fetchUser };
+  return { data, error, loading: !data && !error };
 }
