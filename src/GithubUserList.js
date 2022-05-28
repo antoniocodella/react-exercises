@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import { GithubUser } from "./GithubUser";
 
 export function GithubUserList() {
-  const [userList, setUserList] = useState(["gianmarcotoso"]);
+  const [userList, setUserList] = useState([]);
   const [user, setUser] = useState("");
 
   function handleInputUser(e) {

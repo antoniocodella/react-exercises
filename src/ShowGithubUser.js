@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { GithubUser } from "./GithubUser";
 import { NewGithubUser } from "./NewGithubUser";
 
@@ -7,6 +7,7 @@ export function ShowGithubUser() {
   return (
     <div>
       <NewGithubUser username={username} />
+      <Link to="/users">Come back</Link>
     </div>
   );
 }
