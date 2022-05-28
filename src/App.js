@@ -7,6 +7,7 @@ import { NewGithubUser } from "./NewGithubUser";
 import { ShowGithubUser } from "./ShowGithubUser";
 import { NotFound } from "./NotFound";
 import { Links } from "./Links";
+import { GithubUserList } from "./GithubUserList";
 
 export function App() {
   return (
@@ -22,7 +23,10 @@ export function App() {
         <Routes>
           <Route path="/" element={<Welcome name="Mario" />} />
           <Route path="/counter" element={<Counter />} />
-          <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route path="users" element={<GithubUserList />}>
+            <Route path=":username" element={<ShowGithubUser />} />
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
