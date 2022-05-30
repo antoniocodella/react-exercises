@@ -1,8 +1,9 @@
 import useSWR from "swr";
 
 export function useGiutubUser(username) {
-  const { data, error, mutate } = useSWR(
-    `https://api.github.com/users/${username}`
+  const { data, error } = useSWR(
+    () => (username ? `https://api.github.com/users/${username}` : null),
+    fetcher
   );
 
   function handleFetchData() {
