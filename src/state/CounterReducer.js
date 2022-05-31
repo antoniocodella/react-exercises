@@ -6,21 +6,21 @@ const RESET = "COUNTER@RESET";
 
 export function incrementCounter(by = 1) {
   return {
-    key: INCREMENT,
+    type: INCREMENT,
     paylod: by,
   };
 }
 
 export function decrementCounter(by = 1) {
   return {
-    key: DECREMENT,
+    type: DECREMENT,
     paylod: by,
   };
 }
 
 export function resetCounter() {
   return {
-    key: RESET,
+    type: RESET,
   };
 }
 
