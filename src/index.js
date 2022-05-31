@@ -23,6 +23,6 @@ store.dispatch(decrementCounter(4));
 store.dispatch(incrementCounter(1));
 store.dispatch(resetCounter());
 store.dispatch(addTodo({ id: 1, title: "Studying React", completed: true }));
-store.dispatch(addTodo({ id: 2, title: "Studying Redux", completed: false }));
+store.dispatch(addTodo({ id: 2, title: "Studying Redux", completed: true }));
 store.dispatch(removeTodo(2));
 store.dispatch(editTodo(1, { title: "Studying Angular" }));
