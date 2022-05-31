@@ -1,4 +1,10 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 import { counterReducer } from "./CounterReducer";
+import { todosReducer } from "./TodosReducer";
 
-export const store = createStore(counterReducer);
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  todos: todosReducer,
+});
+
+export const store = createStore(rootReducer);
