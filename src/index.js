@@ -19,5 +19,5 @@ store.subscribe(() => {
 store.dispatch(incrementCounter(5));
 store.dispatch(incrementCounter(2));
 store.dispatch(decrementCounter(4));
-store.dispatch(incrementCounter());
+store.dispatch(incrementCounter(1));
 store.dispatch(resetCounter());
