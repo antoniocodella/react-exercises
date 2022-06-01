@@ -47,15 +47,13 @@ export class Login extends React.Component {
           checked={this.state.remember}
           onChange={this.handleInputChange}
         />
-        {this.state.username === "" || this.state.password === "" ? (
-          <button type="submit" disabled>
-            Submit
-          </button>
-        ) : (
-          <button type="submit" onClick={this.handleSubmit}>
-            Submit
-          </button>
-        )}
+        <button
+          type="submit"
+          disabled={!this.state.username || !this.state.password}
+          onClick={this.handleSubmit}
+        >
+          Submit
+        </button>
       </form>
     );
   }
