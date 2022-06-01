@@ -20,7 +20,7 @@ store.subscribe(() => {
 store.dispatch(incrementCounter(5));
 store.dispatch(incrementCounter(2));
 store.dispatch(decrementCounter(4));
-store.dispatch(incrementCounter(1));
+store.dispatch(incrementCounter());
 store.dispatch(resetCounter());
 store.dispatch(addTodo({ id: 1, title: "Studying React", completed: true }));
 store.dispatch(addTodo({ id: 2, title: "Studying Redux", completed: true }));
