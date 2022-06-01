@@ -11,7 +11,7 @@ import { addTodo, editTodo, removeTodo } from "./state/TodosReducer";
 
 const root = document.querySelector("#root");
 
-// ReactDOM.render(<App />, root);
+ReactDOM.render(<App />, root);
 
 store.subscribe(() => {
   console.log(store.getState());
